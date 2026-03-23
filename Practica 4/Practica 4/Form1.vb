@@ -1,5 +1,8 @@
 ﻿Public Class Form1
     Dim formato As Boolean = True
+    Dim boton_start As Boolean = False
+    Dim tiempo_crono As Integer
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'iniciar los timers 
         Timer1.Start()
@@ -89,5 +92,28 @@
             Button1.Text = "24h"
             formato = True
         End If
+    End Sub
+
+    Private Sub Start_Click(sender As Object, e As EventArgs) Handles Start.Click
+        If boton_start = False Then
+            Timer3.Enabled = True
+            Start.Text = "Stop"
+            boton_start = True
+        ElseIf boton_start = True Then
+            Timer3.Enabled = False
+            Start.Text = "start"
+            boton_start = False
+        End If
+    End Sub
+
+    Private Sub Reset_Click(sender As Object, e As EventArgs) Handles Reset.Click
+        tiempo_crono = 0
+        Timer3.Enabled = False
+        Tiempo.Text = "0"
+    End Sub
+
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+        tiempo_crono = tiempo_crono + 1
+        Tiempo.Text = tiempo_crono.ToString()
     End Sub
 End Class

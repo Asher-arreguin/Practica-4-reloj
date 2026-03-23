@@ -33,13 +33,20 @@ Partial Class Form1
         Me.picturebox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Configuracion = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Segundos = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Tiempo = New System.Windows.Forms.Label()
+        Me.Start = New System.Windows.Forms.Button()
+        Me.Reset = New System.Windows.Forms.Button()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.picturebox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Horas
@@ -143,9 +150,18 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Configuracion)
         Me.Panel1.Location = New System.Drawing.Point(145, 361)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(188, 66)
+        Me.Panel1.Size = New System.Drawing.Size(146, 66)
         Me.Panel1.TabIndex = 7
         Me.Panel1.Visible = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Blanco", "Rojo", "Azul", "Amarillo", "Verde"})
+        Me.ComboBox1.Location = New System.Drawing.Point(6, 44)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 19)
+        Me.ComboBox1.TabIndex = 8
         '
         'Button1
         '
@@ -168,15 +184,6 @@ Partial Class Form1
         Me.Configuracion.TabIndex = 0
         Me.Configuracion.Text = "Configuraciones "
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Blanco", "Rojo", "Azul", "Amarillo", "Verde"})
-        Me.ComboBox1.Location = New System.Drawing.Point(6, 44)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 19)
-        Me.ComboBox1.TabIndex = 8
-        '
         'Segundos
         '
         Me.Segundos.AutoSize = True
@@ -187,12 +194,65 @@ Partial Class Form1
         Me.Segundos.TabIndex = 8
         Me.Segundos.Text = "Segundos"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Reset)
+        Me.Panel2.Controls.Add(Me.Start)
+        Me.Panel2.Controls.Add(Me.Tiempo)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Location = New System.Drawing.Point(297, 359)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(137, 68)
+        Me.Panel2.TabIndex = 9
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("MS Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(19, 2)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(97, 15)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Cronometro"
+        '
+        'Tiempo
+        '
+        Me.Tiempo.AutoSize = True
+        Me.Tiempo.Location = New System.Drawing.Point(4, 30)
+        Me.Tiempo.Name = "Tiempo"
+        Me.Tiempo.Size = New System.Drawing.Size(47, 11)
+        Me.Tiempo.TabIndex = 1
+        Me.Tiempo.Text = "Label3"
+        '
+        'Start
+        '
+        Me.Start.Location = New System.Drawing.Point(1, 45)
+        Me.Start.Name = "Start"
+        Me.Start.Size = New System.Drawing.Size(50, 23)
+        Me.Start.TabIndex = 2
+        Me.Start.Text = "Button2"
+        Me.Start.UseVisualStyleBackColor = True
+        '
+        'Reset
+        '
+        Me.Reset.Location = New System.Drawing.Point(54, 46)
+        Me.Reset.Name = "Reset"
+        Me.Reset.Size = New System.Drawing.Size(52, 22)
+        Me.Reset.TabIndex = 3
+        Me.Reset.Text = "Button3"
+        Me.Reset.UseVisualStyleBackColor = True
+        '
+        'Timer3
+        '
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 11.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gainsboro
         Me.ClientSize = New System.Drawing.Size(662, 449)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Segundos)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.picturebox2)
@@ -211,6 +271,8 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -230,4 +292,10 @@ Partial Class Form1
     Friend WithEvents Configuracion As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Segundos As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Reset As Button
+    Friend WithEvents Start As Button
+    Friend WithEvents Tiempo As Label
+    Friend WithEvents Timer3 As Timer
 End Class

@@ -128,5 +128,8 @@
   <ItemGroup>
     <None Include="Resources\iconocronometro.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temporizador.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -46,10 +46,13 @@ Partial Class Form1
         Me.picturebox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -280,53 +283,77 @@ Partial Class Form1
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.Button3)
+        Me.Panel3.Controls.Add(Me.Button5)
+        Me.Panel3.Controls.Add(Me.Button4)
         Me.Panel3.Controls.Add(Me.Button2)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Location = New System.Drawing.Point(376, 359)
+        Me.Panel3.Location = New System.Drawing.Point(253, 359)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(102, 68)
+        Me.Panel3.Size = New System.Drawing.Size(224, 68)
         Me.Panel3.TabIndex = 12
         Me.Panel3.Visible = False
         '
-        'Label3
+        'Button3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("MS Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(4, 5)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 12)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Temporizador"
+        Me.Button3.Font = New System.Drawing.Font("MS Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(76, 35)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(56, 28)
+        Me.Button3.TabIndex = 7
+        Me.Button3.Text = "1 min"
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'Label4
+        'Button5
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(5, 29)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(82, 11)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "00:00:00.00"
+        Me.Button5.Location = New System.Drawing.Point(162, 11)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(49, 23)
+        Me.Button5.TabIndex = 6
+        Me.Button5.Text = "Reset"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(162, 42)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(49, 23)
+        Me.Button4.TabIndex = 5
+        Me.Button4.Text = "Start"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("MS Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(3, 43)
+        Me.Button2.Location = New System.Drawing.Point(14, 35)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(56, 28)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "5 min"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button3
+        'Label4
         '
-        Me.Button3.Location = New System.Drawing.Point(65, 42)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(49, 23)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Start"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(35, 17)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(82, 11)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "00:00:00.00"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("MS Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(35, 5)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(89, 12)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Temporizador"
+        '
+        'Timer4
+        '
         '
         'Form1
         '
@@ -390,8 +417,11 @@ Partial Class Form1
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Timer4 As Timer
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
 End Class
